@@ -5,8 +5,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#00040f',
-        secondary: '#00f6ff',
+        primary: '#FFF8EA',
+        secondary: '#F37878',
+        third: '#E94560',
+        background: '#242424',
         dimWhite: 'rgba(255, 255, 255, 0.8)',
       },
       fontFamily: {
@@ -20,6 +22,12 @@ module.exports = {
         '3xl': '1.953rem',
         '4xl': '2.441rem',
         '5xl': '3.052rem',
+        '6xl': '4.632rem',
+        '7xl': '5.232rem',
+        '8xl': '6.132rem',
+      },
+      transitionTimingFunction: {
+        'in-expo': 'cubic-bezier(1,.4,.7,1.54)',
       },
     },
     screens: {

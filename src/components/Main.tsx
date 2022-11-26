@@ -1,34 +1,43 @@
-import { useEffect, useState } from 'react';
 import { Transition } from '@headlessui/react';
 
-function Main() {
-  const [pageLoaded, setPageLoaded] = useState(false);
+interface Props {
+  pageLoaded: boolean;
+}
 
-  useEffect(() => {
-    setPageLoaded(true);
-  }, []);
-
+function Main({ pageLoaded }: Props) {
   return (
     <Transition
-      className="font-medium text-primary border-b-4 absolute rounded-r-xl top-1/3 transition duration-300 hover:-translate-y-1 hover:bg-indigo-500 hover:cursor-pointer hover:text-white"
+      className="transition-all duration-1000 text-primary border-b-2 border-primary hover:cursor-pointer font-medium"
       show={pageLoaded}
-      enter="transition-opacity duration-1000"
-      enterFrom="opacity-0 translate-y-full"
+      enter="transition-all ease-in-out"
+      enterFrom="opacity-0"
       enterTo="opacity-100"
-      leave="transition-opacity duration-150"
-      leaveFrom="opacity-100"
-      leaveTo="opacity-0"
     >
-      <div className="p-6">
-        <h1 className="text-4xl">Hey there, 👋</h1>
-        <p className="text-3xl">Welcome to my portfolio.</p>
-        <p className="text-2xl">
-          My name is Erdinch, and I&apos;m a self taught web developer.
-        </p>
-        {/* <p className="text-xl">
-            Here you can view some of my projects and contact me.
-          </p> */}
-      </div>
+      <Transition.Child
+        className="transition-all duration-700"
+        enter="transition-all"
+        enterFrom="opacity-0 -translate-x-full"
+        enterTo="opacity-100"
+        leave="transition-all ease-linear duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <p className="sm:text-7xl text-3xl">Erdinch Osman</p>
+      </Transition.Child>
+
+      <Transition.Child
+        className="transition-all duration-1000 text-secondary"
+        enter="transition-all"
+        enterFrom="opacity-0 translate-x-full"
+        enterTo="opacity-100"
+        leave="transition-all ease-linear duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <div className="sm:text-6xl text-5xl">
+          <p>Web developer</p>
+        </div>
+      </Transition.Child>
     </Transition>
   );
 }
