@@ -7,7 +7,7 @@ interface Props {
 function Main({ pageLoaded }: Props) {
   return (
     <Transition
-      className="transition-all duration-1000 text-primary border-b-2 border-primary hover:cursor-pointer font-medium"
+      className="pt-2 transition-all duration-1000 text-primary border-b-2 border-primary hover:cursor-pointer font-medium"
       show={pageLoaded}
       enter="transition-all ease-in-out"
       enterFrom="opacity-0"

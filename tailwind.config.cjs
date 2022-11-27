@@ -26,18 +26,39 @@ module.exports = {
         '7xl': '5.232rem',
         '8xl': '6.132rem',
       },
-      transitionTimingFunction: {
-        'in-expo': 'cubic-bezier(1,.4,.7,1.54)',
+      keyframes: {
+        'slide-left': {
+          '0%': { opacity: 0, transform: 'translateX(15px)' },
+          '20%': { opacity: 1, transform: 'translateX(0px)' },
+          '80%': { opacity: 1, transform: 'translateX(-9px)' },
+          '100%': { opacity: 0, transform: 'translateX(-15px)' },
+        },
+        'slide-right': {
+          '0%': { opacity: 0, transform: 'translateX(-15px)' },
+          '20%': { opacity: 1, transform: 'translateX(-0px)' },
+          '80%': { opacity: 1, transform: 'translateX(9px)' },
+          '100%': { opacity: 0, transform: 'translateX(15px)' },
+        },
+        blink: {
+          '0%': { color: 'transparent' },
+          '50%': { color: 'white' },
+          '100%': { color: 'transparent' },
+        },
+      },
+      animation: {
+        'slide-arrow-left': 'slide-left 2s linear infinite',
+        'slide-arrow-right': 'slide-right 2s linear infinite',
+        blink: 'blink 1s step-end infinite',
+      },
+      screens: {
+        xs: '480px',
+        ss: '620px',
+        sm: '768px',
+        md: '1060px',
+        lg: '1200px',
+        xl: '1700px',
       },
     },
-    screens: {
-      xs: '480px',
-      ss: '620px',
-      sm: '768px',
-      md: '1060px',
-      lg: '1200px',
-      xl: '1700px',
-    },
+    plugins: [],
   },
-  plugins: [],
 };
